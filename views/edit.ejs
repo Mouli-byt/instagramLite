@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editing portal</title>
+</head>
+<body>
+    <h3>Editing specific post</h3>
+    <p>id:<%=post.id%></p>
+    <form method="post" action="/posts/<%=post.id%>?_method=PATCH">
+       
+           <input class="a" name="image" > <br> <br>
+           <input class="b" name="caption" > <br> <br>
+           <button>Submit</button>
+     
+    </form>
+       <script>
+            document.querySelector(".a").value="<%=post.image%>"
+            document.querySelector(".b").value="<%=post.caption%>"
+        </script>
+</body>
+</html>

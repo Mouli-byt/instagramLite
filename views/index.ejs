@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Insta</title>
+    <link rel="stylesheet" href="/style.css"> 
+</head>
+<body>
+    <h3>All posts</h3>
+<% for(post of posts) {%>
+    <div class="posts">
+        <p>id:<%=post.id%> </p>
+        <img height="100px" width="100px" src="/<%=post.image%>.jpg" alt="no-img">
+        <p class="caption">caption:<%=post.caption%></p>
+        <a href="http://localhost:8080/posts/edit/<%=post.id%>">Edit</a>
+        
+       <a href="http://localhost:8080/posts/<%=post.id%>">See in detail</a>
+       <form method="post" action="/posts/<%=post.id%>?_method=DELETE">
+             <button>Delete</button>
+
+       </form>
+       
+        <%}%>
+        
+    </div>
+    <br><br>
+    <a href="http://localhost:8080/posts/new">Create new post</a>
+</body>
+</html>
